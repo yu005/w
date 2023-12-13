@@ -11,8 +11,15 @@ namespace _1213
             int x = Convert.ToInt32(K[0]);
             int y = Convert.ToInt32(K[1]);
             char[,] arr = new char[x, y];
-            if (arr[x,y]== 1)
-                FinfLake(x,y);
+            for(int i=0; ;i++)
+            {
+                for(int j=0; ;j++)
+                {
+                  if (arr[i,j]== 1)
+                  FinfLake(i,j);
+                }
+
+            }
 
 
         }
