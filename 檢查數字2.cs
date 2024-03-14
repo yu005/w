@@ -7,6 +7,7 @@ namespace PB2
         static void Main(string[] args)
         {
             string[] str = Console.ReadLine().Split(' ');
+            strimg
             
 
             if (!IsLegal(str[0]) || !IsLegal(str[1]))
@@ -37,6 +38,10 @@ namespace PB2
             else
             {
                 return true;
+            }
+            public string AB(strimg str[0],string str[1])
+            {
+                
             }
 
         }
