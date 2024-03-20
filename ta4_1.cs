@@ -1,12 +1,14 @@
-﻿using System;
+using System;
 namespace ta4_1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("請輸入月份: ");
             string str = Console.ReadLine();
             int mon = Convert.ToInt32(str);
+            Console.WriteLine("====================== ");
             int day = 0;
             switch (mon)
             {
@@ -32,23 +34,27 @@ namespace ta4_1
                     Console.WriteLine("Wrong Input");
                     return;
             }
-            Console.WriteLine($"{mon} 月的好日子:");
-            for(int i = 1; i <= day; i++) 
+            Console.WriteLine($"{mon}月的好日子: ");
+            for (int i = 1; i <= day; i++)
             {
-                if ( i % 4 != 0 && i % 10 != 4)
-                { 
-                    if(i==day)
+                if (i % 4 != 0 && i % 10 != 4)
+                {
+                    if (i == 1)
                     {
                         Console.Write($"{i}");
                     }
                     else
                     {
-                    Console.Write($"{i} ");
+                        Console.Write($" {i}");
                     }
 
 
                 }
             }
+
+        }
+    }
+}
 
         }
     }
