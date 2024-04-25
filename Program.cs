@@ -17,19 +17,18 @@
         private void InitializeBoard()
         {
             // 初始化遊戲板，所有格子設為空白
-            for (int i = 0; i < 3; i++)//[0][1][2]
+            for (int i = 0; i < 3; i++)//[0][1][2]// 所有行
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)// 所有列
                 {
-                    board[i, j] = ' ';
+                    board[i, j] = ' '; // 設置空白格子
                 }
             }
         }
 
         public void DisplayGameScreen()
         {
-            // 顯示遊戲畫面，包括遊戲狀況和分隔線
-            //Console.WriteLine("遊戲中的畫面：");
+            //初版排版
             //Console.WriteLine("  0 1 2"); // 列號
             //for (int i = 0; i < 3; i++)
             //{
@@ -48,14 +47,14 @@
             //        Console.WriteLine("  -----");
             //    }
             //}
-            // 顯示遊戲畫面，包括遊戲狀況和分隔線
+
             Console.WriteLine("遊戲中的畫面：");
-            Console.WriteLine("   0   1   2  "); // Column numbers
+            Console.WriteLine("   0   1   2  "); //提示格數
             Console.WriteLine(" ╔═══╦═══╦═══╗"); // Top border
             for (int i = 0; i < 3; i++)
             {
                 Console.Write($"{i}║ "); // Left border
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)// 所有列
                 {
                     Console.Write($"{board[i, j]}");
                     Console.Write(" ║ ");
@@ -63,13 +62,12 @@
                 Console.WriteLine(); // Move to the next line
                 if (i < 2)
                 {
-                    Console.WriteLine(" ╠═══╬═══╬═══╣"); // Separator
+                    Console.WriteLine(" ╠═══╬═══╬═══╣"); //行之間的分隔線
                 }
             }
             Console.WriteLine(" ╚═══╩═══╩═══╝"); // Bottom border
-            //顯示遊戲畫面，包括遊戲狀況和分隔線
 
-            //Console.WriteLine("遊戲中的畫面：");
+            //第二版
             //Console.WriteLine("   0 1 2"); // Row numbers
             //Console.WriteLine("  ┌───┬───┬───┐"); // Top border
             //for (int i = 0; i < 3; i++)
@@ -113,7 +111,7 @@
                         Console.WriteLine($"恭喜玩家 {currentPlayer} 贏得了遊戲！");
                         break;
                     }
-                    else if (CheckForDraw())
+                    else if (CheckForDraw())//平局判斷
                     {
                         DisplayGameScreen();
                         Console.WriteLine("遊戲結束，平局！");
@@ -126,7 +124,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("此位置無效或已被佔據，請重新輸入！");
+                    Console.WriteLine("此位置無效或已被佔據，請重新輸入！");//重複輸入
                 }
             }
         }
@@ -139,7 +137,7 @@
                 return false;
             }
 
-            board[row, col] = currentPlayer;
+            board[row, col] = currentPlayer; // 在指定位置下
             return true;
         }
 
